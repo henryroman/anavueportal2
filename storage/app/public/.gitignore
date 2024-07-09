@@ -1,0 +1,14 @@
+*
+!avatars/
+!items/
+
+!avatars-seed/
+!avatars-seed/profile-picture-1.jpg
+!avatars-seed/profile-picture-2.jpg
+!avatars-seed/profile-picture-7.jpg
+
+!items-seed
+!items-seed/img1.jpg
+!items-seed/img2.jpg
+!items-seed/img3.jpg
+!.gitignore
