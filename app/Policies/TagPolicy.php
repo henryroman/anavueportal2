@@ -46,7 +46,7 @@ class TagPolicy
     }
 
     /**
-     * Determine whether the user can delete the tag.
+     * Determine whether the user can delete the tag
      *
      * @param  \App\User  $user
      * @param  \App\Tag  $tag
