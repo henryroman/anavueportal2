@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Livewire\AppAnalysis;
 use App\Http\Livewire\Auth\ForgotPassword;
 use App\Http\Livewire\Auth\ResetPassword;
@@ -64,6 +65,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/sign-in');
 Route::get('/sign-in', SignIn::class)->name('sign-in');
+Route::post('/sign-in', [SignIn::class, 'login'])->name('sign-in-post');
 Route::get('/sign-up', SignUp::class)->name('sign-up');
 Route::get('/forgot-password', ForgotPassword::class)->name('forgot-password');
 Route::get('/reset-password/{id}', ResetPassword::class)->name('reset-password')->middleware('signed');
@@ -71,6 +73,7 @@ Route::get('/reset-password/{id}', ResetPassword::class)->name('reset-password')
 Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
+    Route::post('logout', [LogoutController::class, 'logout'])->name('logout');
     Route::get('/profile', Profile::class)->name('profile');
     Route::get('/kanban', Kanban::class)->name('kanban');
     Route::get('/messages', Messages::class)->name('messages');

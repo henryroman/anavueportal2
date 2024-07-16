@@ -1,13 +1,14 @@
 <?php
 
+// app/Http/Livewire/Auth/SignIn.php
 namespace App\Http\Livewire\Auth;
 
 use App\Models\User;
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
 
 class SignIn extends Component
 {
-
     public $email = '';
     public $password = '';
     public $failed = false;
@@ -15,28 +16,26 @@ class SignIn extends Component
 
     protected $rules = [
         'email' => 'required|email',
-        'password' => 'required'
+        'password' => 'required|min:6'
     ];
+
     public function mount()
     {
-        if (auth()->user()) {
+        if (auth()->check()) {
             return redirect()->intended('/dashboard');
         }
+
         $this->fill([
             'email' => 'admin@volt.com',
             'password' => 'secret',
         ]);
     }
 
-    public function updatedPassword()
-    {
-        $this->validate(['password' => 'min:6',]);
-    }
-
     public function login()
     {
         $credentials = $this->validate();
-        if (auth()->attempt(['email' => $this->email, 'password' => $this->password], $this->remember_me)) {
+
+        if (Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->remember_me)) {
             $user = User::where(['email' => $this->email])->first();
             auth()->login($user, $this->remember_me);
             return redirect()->intended('/dashboard');

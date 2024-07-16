@@ -1,5 +1,22 @@
+<style>
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        z-index: 1000;
+        background-color: #fff;
+        min-width: 160px;
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+        padding: 0.5rem 0;
+        margin: 0;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 0.25rem;
+    }
+    .dropdown-menu.show {
+        display: block;
+    }
+</style>
 <div>
-    <title>Volt Laravel Dashboard - Role Management</title>
+    <title>AnaVue Portal - IAM</title>
     <div>
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
             <div class="d-block mb-4 mb-md-0">
@@ -16,11 +33,11 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item"><a href="#">Volt</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">{{__('Role Management')}}</li>
+                        <li class="breadcrumb-item active" aria-current="page">{{__('Identity and access management')}}</li>
                     </ol>
                 </nav>
-                <h2 class="h4">{{__('Role Management')}}</h2>
-                <p class="mb-0">{{__('Your role management dashboard template.')}}</p>
+                <h2 class="h4">{{__('Identity and access management')}}</h2>
+                <p class="mb-0">{{__('Customise who has access to what.')}}</p>
             </div>
             @can('create', auth()->user())
             <div class="btn-toolbar mb-2 mb-md-0">
@@ -96,7 +113,6 @@
                     <x-table.heading>Action</x-table.heading>
                     @endcan
                 </x-slot>
-
                 <x-slot name="body">
                     @foreach ($roles as $role)
                     <x-table.row>
@@ -106,15 +122,25 @@
                         @can('manage-users', auth()->user())
                         <x-table.cell>
                             @can('update', $role)
-                            <x-button.link>
-                                <a class="dropdown-item rounded-top"
-                                    href="{{ route('edit-role', ['id' => $role->id]) }}"><span
-                                        class="fas fa-user-shield me-2"></span> Edit role</a>
-                                <a onclick="confirm('Are you sure you want to remove this role?') || event.stopImmediatePropagation()"
-                                    wire:click="delete({{ $role->id }})"
-                                    class="dropdown-item text-danger rounded-bottom"><span
-                                        class="fas fa-user-times me-2"></span>Delete role</a>
-                            </x-button.link>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton{{ $role->id }}" onclick="toggleDropdown(event)">
+                                    <span class="fas fa-ellipsis-v"></span>
+                                </button>
+                                <ul class="dropdown-menu" id="dropdownMenu{{ $role->id }}">
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('edit-role', ['id' => $role->id]) }}">
+                                            <span class="fas fa-user-shield me-2"></span> Edit role
+                                        </a>
+                                    </li>
+                                    @can('delete', $role)
+                                    <li>
+                                        <a class="dropdown-item text-danger" onclick="confirm('Are you sure you want to remove this role?') || event.stopImmediatePropagation()" wire:click="delete({{ $role->id }})">
+                                            <span class="fas fa-user-times me-2"></span> Delete role
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            @endcan
                             @endcan
                         </x-table.cell>
                         @endcan
@@ -128,3 +154,37 @@
         </div>
     </div>
 </div>
+<script>
+    function toggleDropdown(event) {
+        const button = event.target.closest('button');
+        const dropdown = button.nextElementSibling;
+    
+        // Toggle the dropdown's visibility
+        dropdown.classList.toggle('show');
+    
+        // Close the dropdown if clicking outside
+        document.addEventListener('click', function handleOutsideClick(e) {
+            if (!button.contains(e.target) && !dropdown.contains(e.target)) {
+                dropdown.classList.remove('show');
+                document.removeEventListener('click', handleOutsideClick);
+            }
+        }, { capture: true });
+    }
+    </script>
+
+    
+    
+
+
+
+
+{{-- @can('update', $role)
+                            <x-button.link>
+                                <a class="dropdown-item rounded-top"
+                                    href="{{ route('edit-role', ['id' => $role->id]) }}"><span
+                                        class="fas fa-user-shield me-2"></span> Edit role</a>
+                                <a onclick="confirm('Are you sure you want to remove this role?') || event.stopImmediatePropagation()"
+                                    wire:click="delete({{ $role->id }})"
+                                    class="dropdown-item text-danger rounded-bottom"><span
+                                        class="fas fa-user-times me-2"></span>Delete role</a>
+                            </x-button.link> --}}

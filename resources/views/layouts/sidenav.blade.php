@@ -112,13 +112,14 @@
                 <span class="sidebar-text">User Management</span>
               </a>
             </li>
-            <li class="nav-item {{ Request::segment(1) == 'role-management' ? 'active' : '' }}">
+            {{-- IAM or role management --}}
+            {{-- <li class="nav-item {{ Request::segment(1) == 'role-management' ? 'active' : '' }}">
               <a href="{{ route('role-management') }}" class="nav-link">
-                {{-- <span class="sidebar-icon"><span class="fas fa-user-check"></span></span> --}}
+                <span class="sidebar-icon"><span class="fas fa-user-check"></span></span>
                 <span class="sidebar-text-contracted">R</span>
-                <span class="sidebar-text">Role Management</span>
+                <span class="sidebar-text">I</span>
               </a>
-            </li>
+            </li> --}}
             @endcan
             @can('manage-items', App\Models\User::class)
             <li class="nav-item {{ Request::segment(1) == 'category-management' ? 'active' : '' }}">

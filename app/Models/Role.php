@@ -17,6 +17,10 @@ class Role extends Model
 
     public function getDateForHumansAttribute()
     {
+        if (!$this->created_at) {
+            return null;
+        }
+
         return $this->created_at->format('d M Y');
     }
 }

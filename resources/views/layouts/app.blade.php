@@ -33,5 +33,5 @@
 
 
     @endif
-
+    
 </x-layouts.base>
