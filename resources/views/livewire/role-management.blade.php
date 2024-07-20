@@ -1,5 +1,5 @@
 <style>
-    .dropdown-menu {
+    #dropdown-menu {
         display: none;
         position: absolute;
         z-index: 1000;
@@ -11,10 +11,29 @@
         border: 1px solid rgba(0, 0, 0, 0.15);
         border-radius: 0.25rem;
     }
-    .dropdown-menu.show {
-        display: block;
-    }
 </style>
+
+<script>
+    // Step 2: Function to copy JSON data to clipboard
+    function copyToClipboard(jsonData) {
+        // Create a temporary textarea element
+        var tempTextarea = document.createElement('textarea');
+        tempTextarea.value = JSON.stringify(jsonData.data, null, 2); // Pretty print the JSON data
+
+        // Add the textarea to the document
+        document.body.appendChild(tempTextarea);
+
+        // Select the text
+        tempTextarea.select();
+
+        // Copy the text
+        document.execCommand('copy');
+
+        // Remove the textarea from the document
+        document.body.removeChild(tempTextarea);
+    }
+</script>
+
 <div>
     <title>AnaVue Portal - IAM</title>
     <div>
@@ -48,7 +67,9 @@
                             d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                     </svg> {{__('New Role')}}</a> --}}
                 <div class="btn-group ms-2 ms-lg-3">
-                    <button type="button" class="btn btn-sm btn-outline-gray-600">Share</button>
+                    <button type="button" class="btn btn-sm btn-outline-gray-600" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Copied!" onclick="copyToClipboard({{ json_encode($roles) }})">
+                        Copy
+                    </button>
                     <button type="button" class="btn btn-sm btn-outline-gray-600">Export</button>
                 </div>
             </div>
@@ -122,25 +143,20 @@
                         @can('manage-users', auth()->user())
                         <x-table.cell>
                             @can('update', $role)
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton{{ $role->id }}" onclick="toggleDropdown(event)">
+                            {{-- <div class="dropdown me-1">
+                                <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
                                     <span class="fas fa-ellipsis-v"></span>
-                                </button>
-                                <ul class="dropdown-menu" id="dropdownMenu{{ $role->id }}">
-                                    <li>
-                                        <a class="dropdown-item" href="{{ route('edit-role', ['id' => $role->id]) }}">
-                                            <span class="fas fa-user-shield me-2"></span> Edit role
-                                        </a>
-                                    </li>
-                                    @can('delete', $role)
-                                    <li>
-                                        <a class="dropdown-item text-danger" onclick="confirm('Are you sure you want to remove this role?') || event.stopImmediatePropagation()" wire:click="delete({{ $role->id }})">
-                                            <span class="fas fa-user-times me-2"></span> Delete role
-                                        </a>
-                                    </li>
-                                </ul>
+                                </button> --}}
+                                <x-button.link>
+                                    <li><a class="dropdown-item rounded-top"
+                                        href="{{ route('edit-role', ['id' => $role->id]) }}"><span
+                                            class="fas fa-user-shield me-2"></span> Edit role</a></li>
+                                    <li><a onclick="confirm('Are you sure you want to remove this role?') || event.stopImmediatePropagation()"
+                                        wire:click="delete({{ $role->id }})"
+                                        class="dropdown-item text-danger rounded-bottom"><span
+                                            class="fas fa-user-times me-2"></span>Delete role</a></li>
+                                </x-button.link>
                             </div>
-                            @endcan
                             @endcan
                         </x-table.cell>
                         @endcan
@@ -153,38 +169,18 @@
             </div>
         </div>
     </div>
+    <p>
+        <?php
+    // $json = "";
+    // function copyFunction($roles){
+    //     foreach ($roles as $role) {
+    //         global $json;
+    //         $json = json_encode($role);
+    //     }
+    //     return $json;
+    // }
+    // echo copyFunction($roles);
+        ?>
+        </p>
 </div>
-<script>
-    function toggleDropdown(event) {
-        const button = event.target.closest('button');
-        const dropdown = button.nextElementSibling;
-    
-        // Toggle the dropdown's visibility
-        dropdown.classList.toggle('show');
-    
-        // Close the dropdown if clicking outside
-        document.addEventListener('click', function handleOutsideClick(e) {
-            if (!button.contains(e.target) && !dropdown.contains(e.target)) {
-                dropdown.classList.remove('show');
-                document.removeEventListener('click', handleOutsideClick);
-            }
-        }, { capture: true });
-    }
-    </script>
 
-    
-    
-
-
-
-
-{{-- @can('update', $role)
-                            <x-button.link>
-                                <a class="dropdown-item rounded-top"
-                                    href="{{ route('edit-role', ['id' => $role->id]) }}"><span
-                                        class="fas fa-user-shield me-2"></span> Edit role</a>
-                                <a onclick="confirm('Are you sure you want to remove this role?') || event.stopImmediatePropagation()"
-                                    wire:click="delete({{ $role->id }})"
-                                    class="dropdown-item text-danger rounded-bottom"><span
-                                        class="fas fa-user-times me-2"></span>Delete role</a>
-                            </x-button.link> --}}

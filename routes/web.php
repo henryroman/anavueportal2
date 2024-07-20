@@ -82,7 +82,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/new-user', NewUser::class)->name('new-user');
     Route::get('/edit-user/{id}', EditUser::class)->name('edit-user');
     Route::get('/role-management', Roles::class)->name('role-management');
-    // Route::get('/new-role', NewRole::class)->name('new-role');
+    Route::get('/new-role', NewRole::class)->name('new-role');
     Route::get('/edit-role/{id}', EditRole::class)->name('edit-role');
     Route::get('/category-management', Categories::class)->name('category-management');
     Route::get('/new-category', NewCategory::class)->name('new-category');
@@ -98,7 +98,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/app-analysis', AppAnalysis::class)->name('app-analysis');
     Route::get('/tasks', Tasks::class)->name('tasks');
     Route::get('/calendar', Calendar::class)->name('calendar');
-    Route::get('/map', Map::class)->name('map');
     Route::get('/datatables', Datatables::class)->name('datatables');
     Route::get('/bootstrap-tables', BootstrapTables::class)->name('bootstrap-tables');
     Route::get('/examples/profile', ProfileExample::class)->name('profile-example');

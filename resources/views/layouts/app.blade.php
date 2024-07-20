@@ -2,10 +2,10 @@
 
 
     @if(in_array(request()->route()->getName(), ['dashboard', 'profile', 'profile-example', 'kanban', 'messages', 'single-message',
-    'user-management', 'new-user', 'edit-user', 'role-management', 'new-role', 'edit-role', 'category-management', 'new-category', 'edit-category',
+    'user-management', 'new-user', 'edit-user', 'new-role', 'edit-role', 'category-management', 'new-category', 'edit-category',
     'tag-management', 'new-tag', 'edit-tag', 'item-management', 'new-item', 'edit-item', 'bootstrap-tables', 'transactions', 'buttons',
     'forms', 'modals', 'notifications', 'typography', 'traffic-sources', 'app-analysis', 'tasks', 'calendar', 'map',
-    'datatables', 'bootstrap-tables', 'pricing', 'billing', 'invoice', 'widgets']))
+    'datatables', 'bootstrap-tables', 'pricing', 'billing', 'invoice', 'widgets',]))
 
         {{-- Nav --}}
         @include('layouts.nav')
@@ -17,6 +17,17 @@
             {{ $slot }}
             {{-- Footer --}}
             @include('layouts.footer')
+        </main>
+
+    @elseif(in_array(request()->route()->getName(), ['role-management']))
+
+        @include('layouts.nav')
+
+        @include('layouts.sidenav')
+        <main class="content">
+
+            @include('layouts.topbar')
+            {{ $slot }}
         </main>
 
     @elseif(in_array(request()->route()->getName(), ['404', '500', 'lock']))
@@ -33,5 +44,5 @@
 
 
     @endif
-    
+
 </x-layouts.base>

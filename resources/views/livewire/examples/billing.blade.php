@@ -1,4 +1,4 @@
-<title>Volt Laravel Dashboard - Billing</title>
+<title>Anavue Dashboard - Billing</title>
 <div class="row my-4">
     <div class="col-12 col-lg-6">
         <div class="card border-0 shadow text-center py-4 mb-4 mb-lg-0">

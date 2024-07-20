@@ -391,13 +391,19 @@
               </div>
             </div>
           </a>
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark flex-column mx-0 shadow w-220px" data-bs-theme="dark">
+          <ul id="profile" class="dropdown-menu dropdown-menu-end dropdown-menu-dark flex-column mx-0 shadow w-220px" data-bs-theme="dark">
             <li>
               <a class="dropdown-item d-flex gap-2 align-items-center" href="{{ route('profile') }}">
                 {{-- <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path>
                 </svg> --}}
                 My Profile
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex gap-2 align-items-center" href="{{ route('billing') }}">
+                {{-- <svg class="bi" width="16" height="16"><use xlink:href="#film"/></svg> --}}
+                Billing
               </a>
             </li>
             <li>
@@ -410,25 +416,19 @@
             </li>
             <li>
               <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
-                {{-- <svg class="bi" width="16" height="16"><use xlink:href="#film"/></svg> --}}
-                Movies
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
                 {{-- <svg class="bi" width="16" height="16"><use xlink:href="#music-note-beamed"/></svg> --}}
-                Music
+                Help
               </a>
             </li>
             <li>
-              <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
+              <a class="dropdown-item d-flex gap-2 align-items-center" href="{{ route('lock') }}">
                 {{-- <svg class="bi" width="16" height="16"><use xlink:href="#joystick"/></svg> --}}
-                Games
+                Lock 
               </a>
             </li>
             <li><hr class="dropdown-divider"></li>
-            <li>
-              <a id="logout" class="dropdown-item dropdown-item-danger d-flex gap-2 align-items-center">
+            <li id="logout">
+              <a class="dropdown-item dropdown-item-danger d-flex gap-2 align-items-center">
                 {{-- <svg class="bi" width="16" height="16"><use xlink:href="#trash"/></svg> --}}
                 <livewire:auth.logout />
               </a>
@@ -441,20 +441,26 @@
 </nav>
 
 <style>
-.dropdown-menu {
+#profile {
   display: flex;
   flex-direction: column;
+  border: 1px solid white;
+
 }
 
 /* Ensure the dropdown menu overlaps content below */
-.dropdown-menu {
+#profile {
   position: absolute;
   z-index: 1050; /* Ensure it has a higher z-index to overlap other content */
 }
 
 /* Adjust the dropdown to align properly */
-.navbar .dropdown-menu {
+#profile {
   right: 0; /* Align the dropdown to the right */
   left: auto; /* Prevent it from aligning to the left */
+}
+
+#logout:hover {
+  background-color: rgb(255,88,71);
 }
 </style>

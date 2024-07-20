@@ -24,7 +24,7 @@ class EditRole extends Component
     {
         $this->validate([
             'role.name' => ['max:10', 'required', Rule::unique('roles', 'name')->ignore($this->role)],
-            'role.name' => 'max:15',
+        
         ]);
     }
 
@@ -46,6 +46,7 @@ class EditRole extends Component
             session()->flash('success', 'Role edited successfully.');
             return redirect(route('role-management'));
         }
+        
     }
 
     public function render()
