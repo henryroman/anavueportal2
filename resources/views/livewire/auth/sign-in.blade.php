@@ -104,20 +104,12 @@
     </section>
 </main> --}}
 
-<style>
-    .masthead9{
-        /* min-height: 100vh !important;
-        position: relative !important;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2) !important; */
 
-    }
-    
-    </style>
 
 
 <main>
     <title>AnaVue Portal - Sign In page</title>
-        <div class="masthead9" style=" background-color: #fce5cd; min-height: 100vh !important; position: relative !important; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2) !important; background-size: cover;">
+        <div class="masthead9 pb-5" style=" background-color: #fce5cd;">
             <div class="d-flex justify-content-center align-items-center">
                 <section class="card mt-5 pt-3" style="width: 25rem;">
                     <img src="../assets/img/brand/anavuelogo.png" class="card-img-top " alt="logo">
@@ -172,3 +164,13 @@
                 </section>
         </div>
 </main>
+
+
+<style>
+    #masthead9 {
+        min-height: 100vh !important; 
+        position: relative !important; 
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2) !important; 
+        background-size: cover;
+    }
+</style>
