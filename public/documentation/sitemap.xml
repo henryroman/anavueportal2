@@ -85,9 +85,6 @@
     <loc>http://localhost:9001/plugins/jquery-counters/</loc>
   </url>
   <url>
-    <loc>http://localhost:9001/plugins/kanban/</loc>
-  </url>
-  <url>
     <loc>http://localhost:9001/laravel-example-pages/</loc>
   </url>
   <url>

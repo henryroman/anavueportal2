@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Livewire\AppAnalysis;
 use App\Http\Livewire\Auth\ForgotPassword;
@@ -33,7 +32,6 @@ use App\Http\Livewire\Examples\ResetPasswordExample;
 use App\Http\Livewire\Examples\SignInExample;
 use App\Http\Livewire\Examples\SignUpExample;
 use App\Http\Livewire\Items;
-use App\Http\Livewire\Kanban;
 use App\Http\Livewire\Map;
 use App\Http\Livewire\Messages;
 use App\Http\Livewire\NewCategory;
@@ -72,34 +70,49 @@ Route::get('/reset-password/{id}', ResetPassword::class)->name('reset-password')
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/dashboard', Dashboard::class)->name('dashboard');
-    Route::post('logout', [LogoutController::class, 'logout'])->name('logout');
-    Route::get('/profile', Profile::class)->name('profile');
-    Route::get('/kanban', Kanban::class)->name('kanban');
-    Route::get('/messages', Messages::class)->name('messages');
-    Route::get('/single-message', SingleMessage::class)->name('single-message');
-    Route::get('/user-management', Users::class)->name('user-management');
-    Route::get('/new-user', NewUser::class)->name('new-user');
-    Route::get('/edit-user/{id}', EditUser::class)->name('edit-user');
-    Route::get('/role-management', Roles::class)->name('role-management');
-    Route::get('/new-role', NewRole::class)->name('new-role');
-    Route::get('/edit-role/{id}', EditRole::class)->name('edit-role');
-    Route::get('/category-management', Categories::class)->name('category-management');
-    Route::get('/new-category', NewCategory::class)->name('new-category');
-    Route::get('/edit-category/{id}', EditCategory::class)->name('edit-category');
-    Route::get('/tag-management', Tags::class)->name('tag-management');
-    Route::get('/new-tag', NewTag::class)->name('new-tag');
-    Route::get('/edit-tag/{id}', EditTag::class)->name('edit-tag');
-    Route::get('/item-management', Items::class)->name('item-management');
-    Route::get('/new-item', NewItem::class)->name('new-item');
-    Route::get('/edit-item/{id}', EditItem::class)->name('edit-item');
-    Route::get('/transactions', Transactions::class)->name('transactions');
-    Route::get('/traffic-sources', TrafficSources::class)->name('traffic-sources');
-    Route::get('/app-analysis', AppAnalysis::class)->name('app-analysis');
-    Route::get('/tasks', Tasks::class)->name('tasks');
-    Route::get('/calendar', Calendar::class)->name('calendar');
-    Route::get('/datatables', Datatables::class)->name('datatables');
-    Route::get('/bootstrap-tables', BootstrapTables::class)->name('bootstrap-tables');
+
+
+    // Admin-only routes
+    Route::middleware('role:Admin')->group(function () {
+        Route::get('/user-management', Users::class)->name('user-management');
+        Route::get('/new-user', NewUser::class)->name('new-user');
+        Route::get('/edit-user/{id}', EditUser::class)->name('edit-user');
+        Route::get('/role-management', Roles::class)->name('role-management');
+        Route::get('/new-role', NewRole::class)->name('new-role');
+        Route::get('/edit-role/{id}', EditRole::class)->name('edit-role');
+        Route::get('/category-management', Categories::class)->name('category-management');
+        Route::get('/new-category', NewCategory::class)->name('new-category');
+        Route::get('/edit-category/{id}', EditCategory::class)->name('edit-category');
+        Route::get('/tag-management', Tags::class)->name('tag-management');
+        Route::get('/new-tag', NewTag::class)->name('new-tag');
+        Route::get('/edit-tag/{id}', EditTag::class)->name('edit-tag');
+        Route::get('/item-management', Items::class)->name('item-management');
+        Route::get('/new-item', NewItem::class)->name('new-item');
+        Route::get('/edit-item/{id}', EditItem::class)->name('edit-item');
+        Route::get('/dashboard', Dashboard::class)->name('dashboard');
+        Route::post('logout', [LogoutController::class, 'logout'])->name('logout');
+        Route::get('/profile', Profile::class)->name('profile');
+        Route::get('/messages', Messages::class)->name('messages');
+        Route::get('/single-message', SingleMessage::class)->name('single-message');
+    });
+
+    // Routes for Admin and Creator roles
+    Route::middleware(['role:Admin|Creator'])->group(function () {
+        Route::get('/transactions', Transactions::class)->name('transactions');
+        Route::get('/traffic-sources', TrafficSources::class)->name('traffic-sources');
+        Route::get('/app-analysis', AppAnalysis::class)->name('app-analysis');
+        Route::get('/tasks', Tasks::class)->name('tasks');
+        Route::get('/calendar', Calendar::class)->name('calendar');
+        Route::get('/datatables', Datatables::class)->name('datatables');
+        Route::get('/bootstrap-tables', BootstrapTables::class)->name('bootstrap-tables');
+        Route::get('/dashboard', Dashboard::class)->name('dashboard');
+        Route::post('logout', [LogoutController::class, 'logout'])->name('logout');
+        Route::get('/profile', Profile::class)->name('profile');
+        Route::get('/messages', Messages::class)->name('messages');
+        Route::get('/single-message', SingleMessage::class)->name('single-message');
+    });
+
+    // Example routes accessible by all authenticated users
     Route::get('/examples/profile', ProfileExample::class)->name('profile-example');
     Route::get('/examples/pricing', Pricing::class)->name('pricing');
     Route::get('/examples/billing', Billing::class)->name('billing');
@@ -111,6 +124,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/examples/lock', Lock::class)->name('lock');
     Route::get('/examples/404', Err404::class)->name('404');
     Route::get('/examples/500', Err500::class)->name('500');
+    Route::get('/dashboard', Dashboard::class)->name('dashboard');
+    Route::post('logout', [LogoutController::class, 'logout'])->name('logout');
+    Route::get('/profile', Profile::class)->name('profile');
+    Route::get('/messages', Messages::class)->name('messages');
+    Route::get('/single-message', SingleMessage::class)->name('single-message');
+
+    // Component routes
     Route::get('/components/buttons', Buttons::class)->name('buttons');
     Route::get('/components/notifications', Notifications::class)->name('notifications');
     Route::get('/components/forms', Forms::class)->name('forms');

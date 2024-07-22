@@ -1,19 +1,22 @@
 <?php
 
+
+// app/Models/Role.php
 namespace App\Models;
 
-use App\Http\Livewire\Users;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Spatie\Permission\Models\Role as SpatieRole;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Role extends Model
+class Role extends SpatieRole
 {
     use HasFactory;
 
-    protected $guarded=[];
+    protected $guarded = [];
 
-    public function users() {
-        return $this->hasMany(User::class);
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class);
     }
 
     public function getDateForHumansAttribute()
@@ -24,5 +27,4 @@ class Role extends Model
 
         return $this->created_at->format('d M Y');
     }
-
 }
