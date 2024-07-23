@@ -40,15 +40,30 @@ class Items extends Component
     }
 
     public function render()
-    {
-        return view('livewire.item-management', [
+{
+    return view('livewire.item-management', 
+        [
             'items' => Item::searchMultipleItems($this->search)
-                ->join('item_tag', 'id', '=', 'item_tag.item_id')
+                ->join('item_tag', 'items.id', '=', 'item_tag.item_id')
                 ->join('tags', 'tags.id', '=', 'item_tag.tag_id')
-                ->groupBy('items.id')
+                ->groupBy(
+                    'items.id',
+                    'items.name',
+                    'items.excerpt',
+                    'items.description',
+                    'items.picture',
+                    'items.category_id',
+                    'items.status',
+                    'items.date',
+                    'items.show_on_homepage',
+                    'items.options',
+                    'items.created_at',
+                    'items.updated_at'
+                )
                 ->orderBy($this->sortField, $this->sortDirection)
                 ->select('items.*', DB::raw('GROUP_CONCAT(tags.id) as TagsName'))
                 ->paginate($this->entries),
-        ]);
-    }
+        ]
+    );
+}
 }

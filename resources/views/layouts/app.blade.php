@@ -3,7 +3,7 @@
         $routeName = request()->route()->getName();
     @endphp
 
-    @if(in_array($routeName, ['dashboard', 'profile', 'profile-example', 'messages', 'single-message', 'user-management', 'new-user', 'edit-user', 'new-role', 'edit-role', 'category-management', 'new-category', 'edit-category', 'tag-management', 'new-tag', 'edit-tag', 'item-management', 'new-item', 'edit-item', 'bootstrap-tables', 'transactions', 'buttons', 'forms', 'modals', 'notifications', 'typography', 'traffic-sources', 'app-analysis', 'tasks', 'calendar', 'map', 'datatables', 'bootstrap-tables', 'pricing', 'billing', 'invoice', 'widgets']))
+    @if(in_array($routeName, ['dashboard', 'profile', 'profile-example', 'single-message', 'user-management', 'new-user', 'edit-user', 'new-role', 'edit-role', 'category-management', 'new-category', 'edit-category', 'tag-management', 'new-tag', 'edit-tag', 'item-management', 'new-item', 'edit-item', 'bootstrap-tables', 'transactions', 'buttons', 'forms', 'modals', 'notifications', 'typography', 'traffic-sources', 'app-analysis', 'tasks', 'calendar', 'map', 'datatables', 'bootstrap-tables', 'pricing', 'billing', 'invoice', 'widgets']))
         @can('view ' . $routeName)
             {{-- Nav --}}
             @include('layouts.nav')
