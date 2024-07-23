@@ -855,80 +855,80 @@ d.addEventListener("DOMContentLoaded", function (event) {
             {
                 id: 1,
                 title: 'Call with Jane',
-                start: '2020-11-18',
-                end: '2020-11-19',
+                start: '2024-11-18',
+                end: '2024-11-19',
                 className: 'bg-red'
             },
 
             {
                 id: 2,
                 title: 'Dinner meeting',
-                start: '2020-11-21',
-                end: '2020-11-22',
+                start: '2024-11-21',
+                end: '2024-11-22',
                 className: 'bg-orange'
             },
 
             {
                 id: 3,
                 title: 'HackTM conference',
-                start: '2020-11-29',
-                end: '2020-11-30',
+                start: '2024-11-29',
+                end: '2024-11-30',
                 className: 'bg-green'
             },
 
             {
                 id: 4,
                 title: 'Meeting with John',
-                start: '2020-12-01',
-                end: '2020-12-02',
+                start: '2024-12-01',
+                end: '2024-12-02',
                 className: 'bg-blue'
             },
 
             {
                 id: 5,
                 title: 'Summer Hackaton',
-                start: '2020-12-03',
-                end: '2020-12-04',
+                start: '2024-12-03',
+                end: '2024-12-04',
                 className: 'bg-purple'
             },
 
             {
                 id: 6,
                 title: 'Digital event',
-                start: '2020-12-07',
-                end: '2020-12-09',
+                start: '2024-12-07',
+                end: '2024-12-09',
                 className: 'bg-info'
             },
 
             {
                 id: 7,
                 title: 'Marketing event',
-                start: '2020-12-10',
-                end: '2020-12-11',
+                start: '2024-12-10',
+                end: '2024-12-11',
                 className: 'bg-blue'
             },
 
             {
                 id: 8,
                 title: 'Dinner with Parents',
-                start: '2020-12-19',
-                end: '2020-12-20',
+                start: '2024-07-23',
+                end: '2024-07-23',
                 className: 'bg-red'
             },
 
             {
                 id: 9,
-                title: 'Black Friday',
-                start: '2020-12-23',
-                end: '2020-12-24',
-                className: 'bg-yellow'
+                title: 'Yellow tag',
+                start: '2024-07-23',
+                end: '2024-07-24',
+                className: 'bg-blue'
             },
 
             {
                 id: 10,
                 title: 'Cyber Week',
-                start: '2020-12-02',
-                end: '2020-12-03',
+                start: '2024-12-02',
+                end: '2024-12-03',
                 className: 'bg-red'
             }
         ];
@@ -952,7 +952,7 @@ d.addEventListener("DOMContentLoaded", function (event) {
             selectable: true,
             initialView: 'dayGridMonth',
             themeSystem: 'bootstrap',
-            initialDate: '2020-12-01',
+            initialDate: '2024-07-23',
             editable: true,
             events: events,
             buttonText: {
