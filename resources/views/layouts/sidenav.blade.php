@@ -242,7 +242,7 @@
             </svg></span></span>
         </span>
         <div
-          class="multi-level collapse {{ Request::segment(2) == 'profile' || Request::segment(2) == 'pricing' || Request::segment(2) == 'billing' || Request::segment(2) == 'invoice' ? 'show' : '' }}"
+          class="multi-level collapse {{ Request::segment(2) == 'profile' || Request::segment(2) == 'pricing' || Request::segment(2) == 'invoice' ? 'show' : '' }}"
           role="list" id="submenu-pages" aria-expanded="false">
           <ul class="flex-column nav">
             <li class="nav-item {{ Request::segment(2) == 'profile' ? 'active' : '' }}">
@@ -255,12 +255,6 @@
               <a class="nav-link" href="{{ route('pricing') }}">
                 <span class="sidebar-text-contracted">P</span>
                 <span class="sidebar-text">Pricing</span>
-              </a>
-            </li>
-            <li class="nav-item {{ Request::segment(2) == 'billing' ? 'active' : '' }}">
-              <a class="nav-link" href="{{ route('billing') }}">
-                <span class="sidebar-text-contracted">B</span>
-                <span class="sidebar-text">Billing</span>
               </a>
             </li>
             <li class="nav-item {{ Request::segment(2) == 'invoice' ? 'active' : '' }}">
@@ -406,22 +400,6 @@
               </path>
             </svg></span></span>
           <span class="sidebar-text">Buy now</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="https://themesberg.com" target="_blank" class="nav-link d-flex align-items-center">
-          <span class="sidebar-icon me-2">
-            <img class="me-2" src="/assets/img/themesberg.svg" height="20" width="20" alt="Themesberg Logo">
-          </span>
-          <span class="sidebar-text">Themesberg</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="https://updivision.com" target="_blank" class="nav-link d-flex align-items-center">
-          <span class="sidebar-icon me-2">
-            <img class="me-2" src="/assets/img/updivision.png" height="20" width="20" alt="Themesberg Logo">
-          </span>
-          <span class="sidebar-text">Updivision</span>
         </a>
       </li>
     </ul>
