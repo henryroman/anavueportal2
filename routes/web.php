@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\LockScreenController;
 use App\Http\Livewire\AppAnalysis;
 use App\Http\Livewire\Auth\ForgotPassword;
 use App\Http\Livewire\Auth\ResetPassword;
@@ -120,4 +121,12 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', [LogoutController::class, 'logout'])->name('logout');
     Route::get('/profile', Profile::class)->name('profile');
     Route::get('/single-message', SingleMessage::class)->name('single-message');
+    Route::get('/lock-screen', [LockScreenController::class, 'showLockScreen'])->name('lock-screen');
+    Route::post('/unlock', [LockScreenController::class, 'unlock'])->name('unlock');
+    Route::get('/lock', [LockScreenController::class, 'lock'])->name('lock');
+});
+
+
+Route::middleware(['auth', 'locked'])->group(function () {
+    Route::get('/dashboard', Dashboard::class)->name('dashboard');
 });
