@@ -52,7 +52,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/sign-in');
 Route::get('/sign-in', SignIn::class)->name('sign-in');
-Route::post('/sign-in', [SignIn::class, 'login'])->name('sign-in-post');
+Route::post('/sign-in', [SignIn::class, 'login'])->name('login');
 Route::get('/sign-up', SignUp::class)->name('sign-up');
 Route::get('/forgot-password', ForgotPassword::class)->name('forgot-password');
 Route::get('/reset-password/{id}', ResetPassword::class)->name('reset-password')->middleware('signed');
@@ -77,6 +77,7 @@ Route::middleware(['role:Admin|Creator|Member'])->group(function () {
         Route::get('/edit-item/{id}', EditItem::class)->name('edit-item');
         Route::get('/profile', Profile::class)->name('profile');
         Route::get('/single-message', SingleMessage::class)->name('single-message'); 
+        Route::get('/examples/profile', ProfileExample::class)->name('profile-example');
     });
 
     // Routes for Admin and Creator roles
@@ -88,11 +89,17 @@ Route::middleware(['role:Admin|Creator|Member'])->group(function () {
         Route::get('/calendar', Calendar::class)->name('calendar');
         Route::get('/datatables', Datatables::class)->name('datatables');
         Route::get('/bootstrap-tables', BootstrapTables::class)->name('bootstrap-tables');
+        Route::get('/examples/pricing', Pricing::class)->name('pricing');
     });
 
     // Example routes accessible by all authenticated users
-    Route::get('/examples/profile', ProfileExample::class)->name('profile-example');
-    Route::get('/examples/pricing', Pricing::class)->name('pricing');
+    
+    
+    
+});
+
+
+Route::middleware('auth')->group(function () {
     Route::get('/examples/billing', Billing::class)->name('billing');
     Route::get('/examples/invoice', Invoice::class)->name('invoice');
     Route::get('/examples/sign-in', SignInExample::class)->name('sign-in-example');
@@ -103,20 +110,14 @@ Route::middleware(['role:Admin|Creator|Member'])->group(function () {
     Route::get('/examples/404', Err404::class)->name('404');
     Route::get('/examples/500', Err500::class)->name('500');
     Route::get('/dashboard', Dashboard::class)->name('dashboard'); 
-
-    // Component routes
-        Route::get('/components/buttons', Buttons::class)->name('buttons');
-        Route::get('/components/notifications', Notifications::class)->name('notifications');
-        Route::get('/components/forms', Forms::class)->name('forms');
-        Route::get('/components/modals', Modals::class)->name('modals');
-        Route::get('/components/typography', Typography::class)->name('typography');
-        Route::get('/widgets', Widgets::class)->name('widgets');
-
-    // Common routes
-    
-        Route::get('/dashboard', Dashboard::class)->name('dashboard');
-        Route::post('logout', [LogoutController::class, 'logout'])->name('logout');
-        Route::get('/profile', Profile::class)->name('profile');
-        Route::get('/single-message', SingleMessage::class)->name('single-message');
-
+    Route::get('/components/buttons', Buttons::class)->name('buttons');
+    Route::get('/components/notifications', Notifications::class)->name('notifications');
+    Route::get('/components/forms', Forms::class)->name('forms');
+    Route::get('/components/modals', Modals::class)->name('modals');
+    Route::get('/components/typography', Typography::class)->name('typography');
+    Route::get('/widgets', Widgets::class)->name('widgets');
+    Route::get('/dashboard', Dashboard::class)->name('dashboard');
+    Route::post('logout', [LogoutController::class, 'logout'])->name('logout');
+    Route::get('/profile', Profile::class)->name('profile');
+    Route::get('/single-message', SingleMessage::class)->name('single-message');
 });
