@@ -3,7 +3,7 @@
     <div class="col-12 col-lg-6">
         <div class="card border-0 shadow text-center py-4 mb-4 mb-lg-0">
             <div class="card-body">
-                <h2 class="display-3 mb-3">Volt<span class=" text-white pixel-pro-badge subscription-badge bg-secondary fw-bolder">PRO</span></h2>
+                <h2 class="display-3 mb-3">AnaVue<span class=" text-white pixel-pro-badge subscription-badge bg-secondary fw-bolder">Large</span></h2>
                 <p>Switch your subscription to a different type, such as a monthly plan, annual plan, or student plan. And see a list of subscription plans that Volt offers</p>
                 <p class="text-dark my-4">Next payment of <span class="fw-bold">$36 (yearly)</span> occurs on August 13, 2020.</p>
                 <a class="btn btn-sm btn-outline-gray-800 me-2" href="#">Cancel subscription</a>

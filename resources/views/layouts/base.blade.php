@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    @php
+        $routeName = request()->route()->getName();
+    @endphp
+
+    @if(in_array($routeName, ['billing']))
+    @endif
+    
     @if(config('app.is_demo'))
         <link rel="canonical" href="https://themesberg.com/product/laravel/volt-pro-admin-dashboard-template">
         <meta  name="keywords" content="themesberg, updivision, html dashboard, laravel, livewire, laravel livewire, alpine.js, html css dashboard laravel, volt pro laravel admin dashboard, livewire volt dashboard, volt admin, livewire dashboard, livewire admin, web dashboard, bootstrap 5 dashboard laravel, bootstrap 5, css3 dashboard, bootstrap 5 admin laravel, volt dashboard bootstrap 5 laravel pro, frontend, responsive bootstrap 5 dashboard, volt dashboard pro, volt laravel bootstrap 5 dashboard"></meta>
