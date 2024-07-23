@@ -156,7 +156,7 @@
                                 </div>
                             
                                 <div class="d-grid mb-2">
-                                    <button type="submit" class="btn btn-gray-800">{{__('Sign in')}}</button>
+                                    <button type="submit" class="btn btn-gray-800">{{__('login')}}</button>
                                 </div>
                             </form>
         
