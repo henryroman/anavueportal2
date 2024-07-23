@@ -11,7 +11,7 @@
                     <a href="#">About</a>
                 </li>
                 <li class="list-inline-item px-0 px-sm-2">
-                    <a href="#">Themes</a>
+                    <a href="#">Upgrade</a>
                 </li>
                 <li class="list-inline-item px-0 px-sm-2">
                     <a href="#">Blog</a>
