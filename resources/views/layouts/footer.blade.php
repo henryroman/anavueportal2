@@ -8,16 +8,16 @@
             <!-- List -->
             <ul class="list-inline list-group-flush list-group-borderless text-md-end mb-0">
                 <li class="list-inline-item px-0 px-sm-2">
-                    <a href="#">About</a>
+                    <a href="https://anavue.org/about" target="_blank">About</a>
                 </li>
                 <li class="list-inline-item px-0 px-sm-2">
-                    <a href="#">Upgrade</a>
+                    <a href="https://anavue.org/pricing" target="_blank">Upgrade</a>
                 </li>
                 <li class="list-inline-item px-0 px-sm-2">
-                    <a href="#">Blog</a>
+                    <a href="https://anavue.org/blogs" target="_blank">Blog</a>
                 </li>
                 <li class="list-inline-item px-0 px-sm-2">
-                    <a href="#">Contact</a>
+                    <a href="https://anavue.org/contact" target="_blank">Contact</a>
                 </li>
             </ul>
         </div>
