@@ -68,7 +68,7 @@
                             <div class="col-md-6 mb-3">
                                 <div class="form-group">
                                     <label for="phone">{{__('Phone')}}</label>
-                                    <input wire:model="user.phone" class="form-control" id="phone" type="text"
+                                    <input wire:model="user.phone"  id="phone" type="text"
                                         placeholder="+12-345 678 910">
                                 </div>
                             </div>
