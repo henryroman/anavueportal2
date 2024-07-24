@@ -1,43 +1,3 @@
-# [Volt Pro Dashboard Laravel](https://volt-pro-laravel-admin-dashboard.updivision.com/dashboard) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?text=Check%20Volt%20Dashboard%20made%20by%20%40Themesberg%20and%20%40UPDIVISION%20%23webdesign%20%23dashboard%20%23laravel%20%23livewire%20%23bootstrap5&amp;url=https%3A%2F%2Fwww.themesberg.com%2Fproduct%2Flaravel%2Fvolt-pro-admin-dashboard-template)
-## Full Stack Laravel App with Livewire & Alpine.js
-
-
-[<img src="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-laravel/volt-pro-laravel-dashboard.jpg" width="100%" />](https://volt-pro-laravel-admin-dashboard.updivision.com/) 
-
-Build complex admin panels faster with a premium fullstack tool featuring ready to use Laravel CRUDs and Livewire & Alpine.js integrations. We partnered with <a href="https://updivision.com/">UPDIVISION</a> to help you cut up to 90 hours of development time for a wide range of admin panels: blogs, lightweight e-commerce platforms, SaaS apps. 
-
-Volt Dashboard PRO Laravel is a powerful, versatile dashboard which comes with the most commonly used CRUDs in any app: #users, #roles, #items, #categories, #tags. Add in a clean design with over 800 handcrafted UI components and you`ve got an awesome starter pack for building web apps.   
- 
-
-## What am I getting?
-
-You're getting a multi-purpose tool for building complex apps. Complete with a clean, elegant design. 
-
-Volt Dashboard PRO Laravel at a glance:
-
-
-- 800+ handcrafted Bootstrap 5 UI components to make your app stand out. From buttons and forms to alerts and datepickers.
-- 21 example pages to get you started, including sign up page, transactions, Kanban board & more  
-- 10 lightweight plug-ins
-- Laravel CRUDs for the most used functionalities in any CMS: role-based authentication system, my profile, CRUDs for managing users, roles, items, categories and tags
-- SaaS files & Gulp commands
-- Livewire & Alpine.js integration
-- Documentation for each component so you can get started fast
-
-
-
-## Designed to save time
-
-The backend is fully integrated, meaning you can easily tick all the boxes for a fully-functional admin panel for your custom application. You have hundreds of UI components to choose from, which you can easily edit using Sass files and classes. In short, everything you need so that your app looks like you want it to look and does what you want it to do.   
-
-
-## Free demo
-
-
-Check out the open-source demo version for a taste of what Volt Dashboard PRO Laravel has to offer. 
-<meta itemprop="name" content="Volt Dashboard PRO Laravel by Themesberg & UPDIVISION">
-    <meta itemprop="description" content="Fullstack tool featuring Laravel CRUDs, hundreds of UI components and dozens of example pages.">
-
 
 ## Table of Contents
 
@@ -89,10 +49,6 @@ Check out the open-source demo version for a taste of what Volt Dashboard PRO La
 | --- | --- | --- | --- |
 | [![Lock Profile](https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-laravel-dashboard/github/lock.png)](https://volt-pro-laravel-admin-dashboard.updivision.com/lock) | [![404 Not Found](https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-laravel-dashboard/github/400.png)](https://volt-pro-laravel-admin-dashboard.updivision.com/404) | [![500 Server Error](https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-laravel-dashboard/github/500.png)](https://volt-pro-laravel-admin-dashboard.updivision.com/500) | [<img src = "https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-laravel-dashboard/github/documentation.png" width = "85%">](https://volt-pro-laravel-admin-dashboard.updivision.com/documentation/getting-started/overview/index.html)
 
-## Demo
-
--   [Live Preview](https://volt-pro-laravel-admin-dashboard.updivision.com/dashboard)
--   [Product Page](https://themesberg.com/product/laravel/volt-pro-admin-dashboard-template)
 
 # Installation
 
@@ -107,7 +63,7 @@ If you don't already have an Apache local environment with PHP and MySQL, use on
 Also, you will need to install Composer: https://getcomposer.org/doc/00-intro.md
 
 ## Laravel
-1. Download the project’s zip then copy and paste volt-dashboard-master folder in your projects folder. Rename the folder to your project’s name
+1. Download the project’s zip then copy and paste AnaVue-dashboard-master folder in your projects folder. Rename the folder to your project’s name
 2. Make sure you have Node and Composer locally installed.
 3.Run the following command in order to download all the project dependencies. `composer install`
 4. In your terminal run `npm install`
@@ -499,64 +455,7 @@ At present, we officially aim to support the last two versions of the following 
 
 <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/chrome.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/firefox.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/edge.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/safari.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/opera.png" width="64" height="64">
 
-## Resources
-- Demo: <https://volt-pro-laravel-admin-dashboard.updivision.com/dashboardindex.html>
-- Download Page: <https://themesberg.com/product/laravel/volt-pro-admin-dashboard-template>
-- Documentation: <https://volt-pro-laravel-admin-dashboard.updivision.com/documentation/getting-started/overview/index.html>
-- License Agreement: <https://themesberg.com/licensing>
-- Support: <https://themesberg.com/contact>
-- Issues: [Premium support](https://themesberg.com/contact)
-
-## Reporting Issues
-
-We use GitHub Issues as the official bug tracker for Volt Pro. Here are some advices for our users that want to report an issue:
-
-1. Make sure that you are using the latest version of the Volt Pro. Check the CHANGELOG from your dashboard on our [website](https://themesberg.com/).
-2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
-3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
 
 
-## Technical Support or Questions
-
-If you have questions or need help integrating the product please [contact us](https://themesberg.com/contact) instead of opening an issue.
 
 
-## Licensing
-
-- Copyright 2021 Themesberg (Crafty Dwarf SRL) (https://themesberg.com/)
-
-- Themesberg [license](https://themesberg.com/licensing)
-
-
-## Useful Links
-
-- [More themes](https://themesberg.com/themes) from Themesberg
-- [Free themes](https://themesberg.com/products/free-themes) from Themesberg
-- [Affiliate Program](https://themesberg.com/affiliate)
-
-## Social Media
-
-### Themesberg
-
-Twitter: <https://twitter.com/themesberg>
-
-Facebook: <https://www.facebook.com/themesberg/>
-
-Dribbble: <https://dribbble.com/themesberg>
-
-Instagram: <https://www.instagram.com/themesberg/>
-
-### Updivision:
-
-Twitter: <https://twitter.com/updivision?ref=pdl-readme>
-
-Facebook: <https://www.facebook.com/updivision?ref=pdl-readme>
-
-Linkedin: <https://www.linkedin.com/company/updivision?ref=pdl-readme>
-
-Updivision Blog: <https://updivision.com/blog/?ref=pdl-readme>
-
-## Credits
-
-- [Themesberg](https://themesberg.com/)
-- [UPDIVISION](https://updivision.com)
