@@ -160,18 +160,6 @@
           <span class="sidebar-text">Transactions</span>
         </a>
       </li>
-      <li class="nav-item {{ Request::segment(1) == 'tasks' ? 'active' : '' }}">
-        <a href="{{ route('tasks') }}" class="nav-link">
-          <span class="sidebar-icon"><svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
-              <path fill-rule="evenodd"
-                d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
-                clip-rule="evenodd"></path>
-            </svg></span>
-          <span class="sidebar-text">Task List</span>
-        </a>
-      </li>
       <li class="nav-item {{ Request::segment(1) == 'calendar' ? 'active' : '' }}">
         <a href="{{ route('calendar') }}" class="nav-link">
           <span class="sidebar-icon"><svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
@@ -378,7 +366,7 @@
       </li>
       <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
       <li class="nav-item">
-        <a href="/documentation/getting-started/overview/index.html" target="_blank"
+        <a href="/profile" target="_self"
           class="nav-link d-flex align-items-center">
           <span class="sidebar-icon"><svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg">
@@ -386,22 +374,23 @@
                 d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
                 clip-rule="evenodd"></path>
             </svg></span>
-          <span class="sidebar-text">Documentation <span
-              class="badge bg-secondary ms-1 text-gray-800 badge-sm">v1.0</span></span>
+          <span class="sidebar-text">Profile</span>
         </a>
       </li>
       <li class="nav-item">
-        <a href="https://themesberg.com/product/laravel/volt-pro-admin-dashboard-template" target="_blank"
-          class="nav-link d-flex align-items-center">
-          <span class="sidebar-icon"><svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z">
-              </path>
-            </svg></span></span>
-          <span class="sidebar-text">Buy now</span>
-        </a>
+        <div class="nav-link d-flex align-items-center">
+          <span class="sidebar-icon"><svg class="dropdown-icon text-danger me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+          </svg></span>
+            <form action="{{ route('logout') }}" method="POST" style="all: unset; color:black;">
+            @csrf
+            <button type="submit">
+              <span class="sidebar-text" >Logout</span>
+            </button>
+            </form>
+        </div>
       </li>
     </ul>
   </div>
 </nav>
+

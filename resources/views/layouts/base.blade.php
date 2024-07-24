@@ -8,6 +8,8 @@
 
     @if(in_array($routeName, ['billing']))
     @endif
+
+    
     
     @if(config('app.is_demo'))
         <link rel="canonical" href="https://themesberg.com/product/laravel/volt-pro-admin-dashboard-template">
@@ -179,6 +181,113 @@
 </head>
 
 <body>
+    @if(in_array($routeName, ['transactions']))
+    <script>
+    document.getElementById('export-btn').addEventListener('click', function () {
+        let table = document.getElementById('orders-table');
+        let csv = [];
+        for (let row of table.rows) {
+            let cols = row.querySelectorAll('td, th');
+            let rowData = [];
+            for (let col of cols) {
+                rowData.push(col.innerText);
+            }
+            csv.push(rowData.join(','));
+        }
+        let csvContent = csv.join('\n');
+        let blob = new Blob([csvContent], { type: 'text/csv' });
+        let url = window.URL.createObjectURL(blob);
+        let a = document.createElement('a');
+        a.setAttribute('hidden', '');
+        a.setAttribute('href', url);
+        a.setAttribute('download', 'transactions.csv');
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    });
+
+    // JavaScript to add new transaction
+    document.getElementById('save-transaction').addEventListener('click', function () {
+        let transactionId = document.getElementById('transaction-id').value;
+        let billFor = document.getElementById('bill-for').value;
+        let issueDate = document.getElementById('issue-date').value;
+        let dueDate = document.getElementById('due-date').value;
+        let total = document.getElementById('total').value;
+        let status = document.getElementById('status').value;
+
+        let table = document.getElementById('orders-table').getElementsByTagName('tbody')[0];
+        let newRow = table.insertRow();
+        newRow.innerHTML = `
+            <td><a href="../invoice.html" class="fw-bold">${transactionId}</a></td>
+            <td><span class="fw-normal">${billFor}</span></td>
+            <td><span class="fw-normal">${issueDate}</span></td>                        
+            <td><span class="fw-normal">${dueDate}</span></td>
+            <td><span class="fw-bold">$${total}</span></td>
+            <td><span class="fw-bold text-${status === 'Paid' ? 'success' : status === 'Due' ? 'warning' : 'danger'}">${status}</span></td>
+            <td>
+                <button class="btn btn-link text-dark m-0 p-0" data-bs-toggle="modal" data-bs-target="#edit-transaction-modal">
+                    <span class="icon icon-sm">
+                        <span class="fas fa-ellipsis-h icon-dark"></span>
+                    </span>
+                    <span class="visually-hidden">Edit</span>
+                </button>
+            </td>
+        `;
+
+        document.getElementById('new-transaction-modal').querySelectorAll('input, select').forEach(input => input.value = '');
+        bootstrap.Modal.getInstance(document.getElementById('new-transaction-modal')).hide();
+    });
+
+    // JavaScript to edit a transaction
+    document.getElementById('save-edit-transaction').addEventListener('click', function () {
+        let transactionId = document.getElementById('edit-transaction-id').value;
+        let billFor = document.getElementById('edit-bill-for').value;
+        let issueDate = document.getElementById('edit-issue-date').value;
+        let dueDate = document.getElementById('edit-due-date').value;
+        let total = document.getElementById('edit-total').value;
+        let status = document.getElementById('edit-status').value;
+
+        let table = document.getElementById('orders-table');
+        for (let row of table.rows) {
+            if (row.cells[0].innerText === transactionId) {
+                row.cells[1].innerHTML = <span class="fw-normal">${billFor}</span>;
+                row.cells[2].innerHTML = <span class="fw-normal">${issueDate}</span>;
+                row.cells[3].innerHTML = <span class="fw-normal">${dueDate}</span>;
+                row.cells[4].innerHTML = <span class="fw-bold">$${total}</span>;
+                row.cells[5].innerHTML = <span class="fw-bold text-${status === 'Paid' ? 'success' : status === 'Due' ? 'warning' : 'danger'}">${status}</span>;
+                break;
+            }
+        }
+
+        document.getElementById('edit-transaction-modal').querySelectorAll('input, select').forEach(input => input.value = '');
+        bootstrap.Modal.getInstance(document.getElementById('edit-transaction-modal')).hide();
+    });
+
+    // JavaScript to filter transactions by week
+    function filterTransactionsByWeek(weekNumber) {
+        const startDate = new Date();
+        startDate.setDate(startDate.getDate() - ((startDate.getDay() + 6) % 7));
+        startDate.setDate(startDate.getDate() - (7 * (weekNumber - 1)));
+
+        const endDate = new Date(startDate);
+        endDate.setDate(startDate.getDate() + 6);
+
+        const table = document.getElementById('orders-table');
+        for (let row of table.rows) {
+            if (row.rowIndex === 0) continue; // Skip header row
+
+            const issueDate = new Date(row.cells[2].innerText);
+            if (issueDate >= startDate && issueDate <= endDate) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        }
+    }
+    </script>
+    @endif
+
+
     @if(config('app.is_demo'))
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THQTXJ7" height="0" width="0"

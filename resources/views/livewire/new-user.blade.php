@@ -15,12 +15,13 @@
                                 </svg>
                             </a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#">{{__('Volt')}}</a></li>
+                        <li class="breadcrumb-item"><a href="#">{{__('Security')}}</a></li>
+                        <li class="breadcrumb-item"><a href="/user-management">{{__('Users')}}</a></li>
                         <li class="breadcrumb-item active" aria-current="page">{{__('Add user')}}</li>
                     </ol>
                 </nav>
-                <h2 class="h4">{{__('Add user')}}</h2>
-                <p class="mb-0">{{__('Your user creation template.')}}</p>
+                <h2 class="h4">{{__('New User')}}</h2>
+                <p class="mb-0">{{__('Create a new user.')}}</p>
             </div>
         </div>
         <div class="row">
@@ -41,7 +42,7 @@
                                     <label for="first_name">{{__('First Name')}}</label>
                                     <input wire:model="first_name"
                                         class="form-control @error('first_name') is-invalid @enderror" id="first_name"
-                                        type="text" placeholder="Enter your first name" required>
+                                        type="text" placeholder="Users' first name" required>
                                 </div>
                                 @error('first_name') <div class="invalid-feedback">{{ $message }}</div> @enderror
                             </div>
@@ -50,7 +51,7 @@
                                     <label for="last_name">{{__('Last Name')}}</label>
                                     <input wire:model="last_name"
                                         class="form-control @error('last_name') is-invalid @enderror" id="last_name"
-                                        type="text" placeholder="Also your last name" required>
+                                        type="text" placeholder="Users' last name" required>
                                 </div>
                                 @error('last_name') <div class="invalid-feedback">{{ $message }}</div> @enderror
                             </div>
