@@ -1,1 +1,10 @@
 $secondary: #fb503b;
+$mobile: 'only screen and (max-aspect-ratio: 1/1)';
+
+#profile {
+  display: none;
+
+  @media #{$mobile} {
+    display: block; // or any other display value you want for non-mobile
+  }
+}
