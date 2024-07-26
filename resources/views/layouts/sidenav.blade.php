@@ -377,17 +377,7 @@
           <span class="sidebar-text">Profile</span>
         </a>
       </li>
-        <li class="nav-item-4">
-          <div class="nav-link d-flex align-items-center">
-            <span class="sidebar-icon"><svg class="dropdown-icon text-danger me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
-            </svg></span>
-              <form action="{{ route('logout') }}" method="POST" style="all: unset; color:black;">
-              @csrf
-              <button type="submit">
-                <span class="sidebar-text" >Logout</span>
-              </button>
-              </form>
+
             </form>
         </div>
       </li>
