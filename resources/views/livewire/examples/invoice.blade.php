@@ -87,12 +87,12 @@
                                         <td class="right" id="subtotal">$0.00</td>
                                     </tr>
                                     <tr>
-                                        <td class="left"><strong>Discount (20%)</strong></td>
-                                        <td class="right" id="discount">$0.00</td>
+                                        <td class="left"><strong>Discount (%)</strong></td>
+                                        <td class="right" id="discount" contenteditable="true"></td>
                                     </tr>
                                     <tr>
-                                        <td class="left"><strong>VAT (10%)</strong></td>
-                                        <td class="right" id="vat">$0.00</td>
+                                        <td class="left"><strong>VAT (%)</strong></td>
+                                        <td class="right" id="vat" contenteditable="true"></td>
                                     </tr>
                                     <tr>
                                         <td class="left"><strong>Total</strong></td>
@@ -110,6 +110,8 @@
     </div>
 </div>
 
+<script src="{{ mix('js/pdfGenerator.js') }}"></script>
+
 <script>
     function removeRow(button) {
         button.closest('tr').remove();
@@ -117,6 +119,8 @@
     }
 
     document.querySelector('#invoice-table tbody').addEventListener('input', updateTotals);
+    document.getElementById('discount').addEventListener('input', updateTotals);
+    document.getElementById('vat').addEventListener('input', updateTotals);
 
     function updateTotals() {
         let subtotal = 0;
@@ -128,45 +132,33 @@
             subtotal += total;
         });
 
-        document.getElementById('subtotal').innerText = `$${subtotal.toFixed(2)}`;
+        document.getElementById('subtotal').innerText = $${subtotal.toFixed(2)};
 
-        const discount = subtotal * 0.20;
-        document.getElementById('discount').innerText = `$${discount.toFixed(2)}`;
+        const discountPercent = parseFloat(document.getElementById('discount').innerText) || 0;
+        const vatPercent = parseFloat(document.getElementById('vat').innerText) || 0;
 
-        const vat = (subtotal - discount) * 0.10;
-        document.getElementById('vat').innerText = `$${vat.toFixed(2)}`;
+        const discount = subtotal * (discountPercent / 100);
+        document.getElementById('discount').innerText = discountPercent;
+
+        const vat = (subtotal - discount) * (vatPercent / 100);
+        document.getElementById('vat').innerText = vatPercent;
 
         const total = subtotal - discount + vat;
-        document.getElementById('total').innerText = `$${total.toFixed(2)}`;
-    }
-
-    function generatePDF() {
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF();
-
-        doc.text("Invoice", 10, 10);
-        doc.autoTable({
-            head: [['Item', 'Description', 'Price', 'Qty', 'Total']],
-            body: Array.from(document.querySelectorAll('#invoice-table tbody tr')).map(row => 
-                Array.from(row.querySelectorAll('th, td')).map(cell => cell.innerText)
-            )
-        });
-
-        doc.save('invoice.pdf');
+        document.getElementById('total').innerText = $${total.toFixed(2)};
     }
 
     function addRow() {
         const tableBody = document.querySelector('#invoice-table tbody');
         const row = document.createElement('tr');
         row.setAttribute('contenteditable', 'true');
-        row.innerHTML = `
+        row.innerHTML = 
             <th scope="row" class="text-left fw-bold h6"></th>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
             <td><button type="button" class="btn btn-danger btn-sm" onclick="removeRow(this)">Remove</button></td>
-        `;
+        ;
         tableBody.appendChild(row);
     }
 </script>
