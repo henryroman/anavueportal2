@@ -40,42 +40,42 @@
                         <!-- Price -->
                         <div class="d-flex mb-3">
                             <span class="h5 mb-0">$</span>
-                            <span class="price display-2 mb-0" data-annual="0" data-monthly="0">0</span>
+                            <span class="price display-2 mb-0" data-annual="30.00" data-monthly="30">31</span>
                             <span class="h6 fw-normal align-self-end">/month</span>
                         </div>
-                        <h4 class="mb-3 text-black">Free trial</h4>
-                        <p class="fw-normal mb-0">If you're new to SEO or just need the basics.</p>
+                        <h4 class="mb-3 text-black">Small</h4>
+                        <p class="fw-normal mb-0">For Getting Started</p>
                     </div>
                     <div class="card-body py-5 px-4">
                         <div class="d-flex align-items-center mb-3">
                             <svg class="icon icon-sm me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                            <span>Users<span class="fw-bolder ms-2">1</span></span>
+                            <span>Users<span class="fw-bolder ms-2">5</span></span>
                         </div>
                         <div class="d-flex align-items-center mb-3">
                             <svg class="icon icon-sm me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                            <span>Users Full access to design tool</span>
+                            <span>Our state-of-the-art vision software</span>
                         </div>
                         <div class="d-flex align-items-center mb-3">
                             <svg class="icon icon-sm me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                            <span>Publish with<span class="fw-bolder ms-2">Volt</span> &reg; label</span>
+                            <span>POS integration
                         </div>
                         <div class="d-flex align-items-center mb-3">
                             <svg class="icon icon-sm me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                            <span>1 User</span>
+                            <span>24/7 Human Support</span>
                         </div>
                         <div class="d-flex align-items-center mb-3">
                             <svg class="icon icon-sm me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                            <span>Public Share & Comments</span>
+                            <span>No Credit Card required</span>
                         </div>
                         <div class="d-flex align-items-center">
                             <svg class="icon icon-sm me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                            <span>Chat Support</span>
+                            <span>Customizable Reports</span>
                         </div>
                     </div>
                     <div class="card-footer border-gray-100 d-grid px-4 pb-4">
                         <!-- Button -->
                         <a href="./sign-up.html" target="_blank" class="btn btn-gray-800 d-inline-flex align-items-center justify-content-center">
-                            Start for Free 
+                            Go Small S
                             <svg class="icon icon-xs ms-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </a>
                     </div>
@@ -88,42 +88,42 @@
                         <!-- Price -->
                         <div class="d-flex mb-3 text-primary">
                             <span class="h5 mb-0">$</span>
-                            <span class="price display-2 text-primary mb-0" id="priceStandard">199</span>
+                            <span class="price display-2 text-primary mb-0" id="priceStandard">59</span>
                             <span class="h6 fw-normal align-self-end">/month</span>
                         </div>
-                        <h4 class="mb-3 text-black">Standard</h4>
-                        <p class="fw-normal mb-0">Full access to keyword research tools.</p>
+                        <h4 class="mb-3 text-black">Medium</h4>
+                        <p class="fw-normal mb-0">Our Medium Offering</p>
                     </div>
                     <div class="card-body py-5 p-4">
                         <div class="d-flex align-items-center mb-3">
                             <svg class="icon icon-sm me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                            <span>Users<span class="fw-bolder ms-2">5+</span></span>
+                            <span>Users<span class="fw-bolder ms-2">10</span></span>
                         </div>
                         <div class="d-flex align-items-center mb-3">
                             <svg class="icon icon-sm me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                            <span>All features on <span class="fw-bolder">FREE</span> plan</span>
+                            <span>All features on <span class="fw-bolder">Small</span> plan</span>
                         </div>
                         <div class="d-flex align-items-center mb-3">
                             <svg class="icon icon-sm me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                            <span>Hide<span class="fw-bolder ms-2">Volt</span> &reg; label</span>
+                            <span>3 month surveillance footage cloud storage
                         </div>
                         <div class="d-flex align-items-center mb-3">
                             <svg class="icon icon-sm me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                            <span>All apps</span>
+                            <span>Security alerts with 24/7 tracking</span>
                         </div>
                         <div class="d-flex align-items-center mb-3">
                             <svg class="icon icon-sm me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                            <span>Connect to custom domain</span>
+                            <span>Customizable dashboard</span>
                         </div>
                         <div class="d-flex align-items-center">
                             <svg class="icon icon-sm me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                            <span>Unlimited editable exports</span>
+                            <span>Beta Access to new features</span>
                         </div>
                     </div>
                     <div class="card-footer border-gray-100 d-grid px-4 pb-4">
                         <!-- Button -->
                         <a href="#" class="btn btn-gray-800 d-inline-flex align-items-center justify-content-center">
-                            Go to Standard
+                            Go to Medium
                             <svg class="icon icon-xs ms-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </a>
                     </div>
@@ -139,8 +139,8 @@
                             <span class="price display-2 text-secondary mb-0" id="pricePremium">299</span>
                             <span class="h6 fw-normal align-self-end">/month</span>
                         </div>
-                        <h4 class="mb-3 text-black">Premium</h4>
-                        <p class="fw-normal mb-0">The ideal plan for businesses and agencies.</p>
+                        <h4 class="mb-3 text-black">BIG</h4>
+                        <p class="fw-normal mb-0">The ideal plan for Retailers.</p>
                     </div>
                     <div class="card-body py-5 px-4">
                         <div class="d-flex align-items-center mb-3">
@@ -149,11 +149,11 @@
                         </div>
                         <div class="d-flex align-items-center mb-3">
                             <svg class="icon icon-sm me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                            <span>All features on <span class="fw-bolder">FREE & STANDARD</span> plan</span>
+                            <span>All features on <span class="fw-bolder">Small and Medium</span> plan</span>
                         </div>
                         <div class="d-flex align-items-center mb-3">
                             <svg class="icon icon-sm me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                            <span>CMS Integrated</span>
+                            <span>Unlimited surveillance footage cloud storage</span>
                         </div>
                         <div class="d-flex align-items-center mb-3">
                             <svg class="icon icon-sm me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
@@ -161,17 +161,17 @@
                         </div>
                         <div class="d-flex align-items-center mb-3">
                             <svg class="icon icon-sm me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                            <span>Connect to custom domain</span>
+                            <span>Actionable deep-learning reports</span>
                         </div>
                         <div class="d-flex align-items-center">
                             <svg class="icon icon-sm me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                            <span>Single Sign-On (SSO)</span>
+                            <span>Global data comparisons</span>
                         </div>
                     </div>
                     <div class="card-footer border-gray-100 d-grid px-4">
                         <!-- Button -->
                         <a href="#" class="btn btn-secondary d-inline-flex align-items-center justify-content-center">
-                            Start with Pro
+                            Start with BIG
                             <svg class="icon icon-xs ms-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </a>
                     </div>
@@ -185,7 +185,7 @@
         <div class="col-12 col-lg-10 col-xl-8 col-xxl-6">
             <div class="card-header border-0 text-center">
                 <h2 class="h3 mb-4">Frequently asked questions</h2>
-                <p class="text-gray">Here’s what you need to know about your Rocket license, based on the questions we get asked the most.</p>
+                <p class="text-gray">Here’s what you need to know about your AnaVue Dashboard, based on the questions we get asked the most.</p>
             </div>
             <div class="card-body">
                 <!--Accordion-->
@@ -198,7 +198,7 @@
                       </h2>
                       <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionPricing">
                         <div class="accordion-body">
-                            At Themesberg, our mission has always been focused on bringing openness and transparency to the design process. We've always believed that by providing a space where designers can share ongoing work not only empowers them to make better products, it also helps them grow. We're proud to be a part of creating a more open culture and to continue building a product that supports this vision.
+                            Yes.
                         </div>
                       </div>
                     </div>
@@ -210,7 +210,7 @@
                       </h2>
                       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionPricing">
                         <div class="accordion-body">
-                            At Themesberg, our mission has always been focused on bringing openness and transparency to the design process. We've always believed that by providing a space where designers can share ongoing work not only empowers them to make better products, it also helps them grow. We're proud to be a part of creating a more open culture and to continue building a product that supports this vision.
+                            Contact George@Anavue.org
                         </div>
                       </div>
                     </div>
@@ -222,7 +222,7 @@
                       </h2>
                       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionPricing">
                         <div class="accordion-body">
-                            At Themesberg, our mission has always been focused on bringing openness and transparency to the design process. We've always believed that by providing a space where designers can share ongoing work not only empowers them to make better products, it also helps them grow. We're proud to be a part of creating a more open culture and to continue building a product that supports this vision.
+                            You can find the EULA at <a href="#">this link</a>.
                         </div>
                       </div>
                     </div>

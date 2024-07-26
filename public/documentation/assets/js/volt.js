@@ -1216,8 +1216,8 @@ d.addEventListener("DOMContentLoaded", function (event) {
     // Pricing countup
     var billingSwitchEl = d.getElementById('billingSwitch');
     if (billingSwitchEl) {
-        const countUpStandard = new countUp.CountUp('priceStandard', 99, { startVal: 199 });
-        const countUpPremium = new countUp.CountUp('pricePremium', 199, { startVal: 299 });
+        const countUpStandard = new countUp.CountUp('priceStandard', 50, { startVal: 59 });
+        const countUpPremium = new countUp.CountUp('pricePremium', 60, { startVal: 70 });
 
         billingSwitchEl.addEventListener('change', function () {
             if (billingSwitch.checked) {
