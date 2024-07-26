@@ -8,7 +8,7 @@
         'new-role', 'edit-role', 'category-management', 'new-category', 'edit-category', 'tag-management', 'new-tag', 
         'edit-tag', 'item-management', 'new-item', 'edit-item', 'bootstrap-tables', 'transactions', 'buttons', 'forms', 
         'modals', 'notifications', 'typography', 'traffic-sources', 'app-analysis', 'tasks', 'calendar', 'map', 
-        'datatables', 'bootstrap-tables', 'pricing', 'billing', 'invoice', 'widgets']))
+        'datatables', 'bootstrap-tables', 'pricing', 'billing', 'invoice', 'widgets', 'security',]))
         {{-- Nav --}}
         @include('layouts.nav')
         {{-- SideNav --}}

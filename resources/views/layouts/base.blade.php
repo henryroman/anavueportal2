@@ -6,8 +6,6 @@
         $routeName = request()->route()->getName();
     @endphp
 
-    @if(in_array($routeName, ['billing']))
-    @endif
 
     
     

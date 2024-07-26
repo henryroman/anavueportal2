@@ -407,11 +407,11 @@
               </a>
             </li>
             <li>
-              <a class="dropdown-item d-flex gap-2 align-items-center" href="{{ route('role-management') }}">
+              <a class="dropdown-item d-flex gap-2 align-items-center" href="{{ route('security') }}">
                 {{-- <svg class="bi bi-people-fill mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path>
                 </svg> --}}
-                Access Management
+                Security
               </a>
             </li>
             <li>
