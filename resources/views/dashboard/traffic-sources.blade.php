@@ -1,4 +1,13 @@
-<title>Volt Laravel Dashboard - Traffic Sources</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volt Laravel Dashboard - Traffic Sources</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
     <div class="dropdown">
         <button class="btn btn-gray-800 d-inline-flex align-items-center me-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -25,10 +34,40 @@
         </div>
     </div>
     <div class="btn-group">
-        <button type="button" class="btn btn-sm btn-outline-gray-600">Share</button>
-        <button type="button" class="btn btn-sm btn-outline-gray-600">Export</button>
+        <button type="button" class="btn btn-sm btn-outline-gray-600" data-bs-toggle="modal" data-bs-target="#exportModal">Export to CSV</button>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exportModal" tabindex="-1" aria-labelledby="exportModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exportModalLabel">Select Date Range</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="exportForm">
+                    <div class="mb-3">
+                        <label for="start-date" class="form-label">Start Date</label>
+                        <input type="date" id="start-date" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="end-date" class="form-label">End Date</label>
+                        <input type="date" id="end-date" class="form-control">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="exportCSV()">Save & Export</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Your existing content goes here -->
+
 <div class="row">
     <div class="col-12 col-xl-6 col-xxl-4 mb-4">
         <div class="card border-0 shadow">
@@ -117,7 +156,7 @@
         <div class="card border-0 shadow mb-4">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-centered table-nowrap mb-0 rounded">
+                    <table class="table table-centered table-nowrap mb-0 rounded" id="traffic-table">
                         <thead class="thead-light">
                             <tr>
                                 <th class="border-0 rounded-start">#</th>
@@ -229,7 +268,7 @@
                                 <td>
                                     <div class="row d-flex align-items-center">
                                         <div class="col-12 col-xl-2 px-0">
-                                            <div class="small fw-bold">18%</div>
+                                            <div class="small fw-bold">18%</</div>
                                         </div>
                                         <div class="col-12 col-xl-10 px-0 px-xl-1">
                                             <div class="progress progress-lg mb-0">
@@ -265,7 +304,7 @@
                                 <td>
                                     <div class="row d-flex align-items-center">
                                         <div class="col-12 col-xl-2 px-0">
-                                            <div class="small fw-bold">8%</div>
+                                            <div class="small fw-bold">8%</</div>
                                         </div>
                                         <div class="col-12 col-xl-10 px-0 px-xl-1">
                                             <div class="progress progress-lg mb-0">
@@ -304,7 +343,7 @@
                                 <td>
                                     <div class="row d-flex align-items-center">
                                         <div class="col-12 col-xl-2 px-0">
-                                            <div class="small fw-bold">4%</div>
+                                            <div class="small fw-bold">4%</</div>
                                         </div>
                                         <div class="col-12 col-xl-10 px-0 px-xl-1">
                                             <div class="progress progress-lg mb-0">
@@ -325,3 +364,43 @@
         </div>
     </div>
 </div>
+
+<script>
+    function exportCSV() {
+        const startDate = document.getElementById('start-date').value;
+        const endDate = document.getElementById('end-date').value;
+
+        // Get all the rows of the table
+        const rows = document.querySelectorAll('#traffic-table tbody tr');
+
+        // Filter the rows based on the date range
+        const filteredRows = Array.from(rows).filter(row => {
+            const date = new Date(row.querySelector('.date-column').innerText);
+            return (!startDate || date >= new Date(startDate)) && (!endDate || date <= new Date(endDate));
+        });
+
+        // Create CSV content
+        const csvContent = [
+            ['#', 'Traffic Source', 'Source Type', 'Category', 'Global Rank', 'Traffic Share', 'Change'].join(',')
+        ].concat(
+            filteredRows.map(row => {
+                return Array.from(row.querySelectorAll('td')).map(cell => cell.innerText).join(',');
+            })
+        ).join('\n');
+
+        // Download CSV file
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'traffic_data.csv';
+        link.click();
+
+        // Close the modal
+        var myModal = bootstrap.Modal.getInstance(document.getElementById('exportModal'));
+        myModal.hide();
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

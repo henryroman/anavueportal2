@@ -38,34 +38,34 @@ class RolesAndPermissionsSeeder extends Seeder
             'view bootstrap-tables',
         ];
 
-        // Create permissions
+        // Create permissions with the guard name 'web'
         foreach ($permissions as $permission) {
-            Permission::firstOrCreate(['name' => $permission]);
+            Permission::firstOrCreate(['name' => $permission, 'guard_name' => 'web']);
         }
 
-        // Check if roles exist before creating
-        if (!Role::where('name', 'Admin')->exists()) {
-            $adminRole = Role::create(['name' => 'Admin']);
+        // Check if roles exist before creating, specifying the guard name 'web'
+        if (!Role::where('name', 'Admin')->where('guard_name', 'web')->exists()) {
+            $adminRole = Role::create(['name' => 'Admin', 'guard_name' => 'web']);
         } else {
-            $adminRole = Role::where('name', 'Admin')->first();
+            $adminRole = Role::where('name', 'Admin')->where('guard_name', 'web')->first();
         }
 
-        if (!Role::where('name', 'Creator')->exists()) {
-            $creatorRole = Role::create(['name' => 'Creator']);
+        if (!Role::where('name', 'Creator')->where('guard_name', 'web')->exists()) {
+            $creatorRole = Role::create(['name' => 'Creator', 'guard_name' => 'web']);
         } else {
-            $creatorRole = Role::where('name', 'Creator')->first();
+            $creatorRole = Role::where('name', 'Creator')->where('guard_name', 'web')->first();
         }
 
-        if (!Role::where('name', 'Member')->exists()) {
-            $memberRole = Role::create(['name' => 'Member']);
+        if (!Role::where('name', 'Member')->where('guard_name', 'web')->exists()) {
+            $memberRole = Role::create(['name' => 'Member', 'guard_name' => 'web']);
         } else {
-            $memberRole = Role::where('name', 'Member')->first();
+            $memberRole = Role::where('name', 'Member')->where('guard_name', 'web')->first();
         }
 
         // Assign permissions to roles
-        $adminRole->syncPermissions(Permission::all());
+        $adminRole->syncPermissions(Permission::where('guard_name', 'web')->get());
 
-        $creatorRole->syncPermissions([
+        $creatorRole->syncPermissions(Permission::where('guard_name', 'web')->whereIn('name', [
             'view dashboard',
             'view profile',
             'view transactions',
@@ -75,11 +75,11 @@ class RolesAndPermissionsSeeder extends Seeder
             'view calendar',
             'view datatables',
             'view bootstrap-tables'
-        ]);
+        ])->get());
 
-        $memberRole->syncPermissions([
+        $memberRole->syncPermissions(Permission::where('guard_name', 'web')->whereIn('name', [
             'view dashboard',
             'view profile'
-        ]);
+        ])->get());
     }
 }
