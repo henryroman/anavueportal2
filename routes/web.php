@@ -1,5 +1,7 @@
 <?php
 
+
+use App\Http\Livewire\Security;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\LockScreenController;
 use App\Http\Livewire\AppAnalysis;
@@ -61,6 +63,7 @@ Route::get('/reset-password/{id}', ResetPassword::class)->name('reset-password')
 Route::middleware(['role:Admin|Creator|Member'])->group(function () {
     // Admin-only routes
     Route::middleware('role:Admin')->group(function () {
+        Route::get('/security', Security::class)->name('security');
         Route::get('/user-management', Users::class)->name('user-management');
         Route::get('/new-user', NewUser::class)->name('new-user');
         Route::get('/edit-user/{id}', EditUser::class)->name('edit-user');
@@ -79,6 +82,7 @@ Route::middleware(['role:Admin|Creator|Member'])->group(function () {
         Route::get('/profile', Profile::class)->name('profile');
         Route::get('/single-message', SingleMessage::class)->name('single-message'); 
         Route::get('/examples/profile', ProfileExample::class)->name('profile-example');
+
     });
 
     // Routes for Admin and Creator roles

@@ -44,7 +44,7 @@
                                 </svg>
                             </a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#">Security</a></li>
+                        <li class="breadcrumb-item"><a href="/security">Security</a></li>
                         <li class="breadcrumb-item active" aria-current="page">{{__('Users List')}}</li>
                     </ol>
                 </nav>

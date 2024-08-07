@@ -51,14 +51,13 @@
                                 </svg>
                             </a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#">Volt</a></li>
+                        <li class="breadcrumb-item"><a href="/security">Security</a></li>
                         <li class="breadcrumb-item active" aria-current="page">{{__('Identity and access management')}}</li>
                     </ol>
                 </nav>
                 <h2 class="h4">{{__('Identity and access management')}}</h2>
                 <p class="mb-0">{{__('Customise who has access to what.')}}</p>
             </div>
-            @can('create', auth()->user())
             <div class="btn-toolbar mb-2 mb-md-0">
                 {{-- <a href="{{ route('new-role') }}" class="btn btn-sm btn-gray-800 d-inline-flex align-items-center"><svg
                         class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -73,7 +72,6 @@
                     <button type="button" class="btn btn-sm btn-outline-gray-600">Export</button>
                 </div>
             </div>
-            @endcan
         </div>
         <div class="card card-body shadow-sm table-wrapper table-responsive">
             <div class="table-settings mb-4">
@@ -130,9 +128,7 @@
                         :direction="$sortField === 'description' ? $sortDirection : null">Description</x-table.heading>
                     <x-table.heading sortable wire:click="sortBy('created_at')"
                         :direction="$sortField === 'created_at' ? $sortDirection : null">Date created</x-table.heading>
-                    @can('manage-users', auth()->user())
                     <x-table.heading>Action</x-table.heading>
-                    @endcan
                 </x-slot>
                 <x-slot name="body">
                     @foreach ($roles as $role)
@@ -140,9 +136,7 @@
                         <x-table.cell>{{ $role->name }}</x-table.cell>
                         <x-table.cell>{{ $role->description }}</x-table.cell>
                         <x-table.cell>{{ $role->date_for_humans }}</x-table.cell>
-                        @can('manage-users', auth()->user())
                         <x-table.cell>
-                            @can('update', $role)
                             {{-- <div class="dropdown me-1">
                                 <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
                                     <span class="fas fa-ellipsis-v"></span>
@@ -157,9 +151,7 @@
                                             class="fas fa-user-times me-2"></span>Delete role</a></li>
                                 </x-button.link>
                             </div>
-                            @endcan
                         </x-table.cell>
-                        @endcan
                     </x-table.row>
                     @endforeach
                 </x-slot>
@@ -183,4 +175,3 @@
         ?>
         </p>
 </div>
-
